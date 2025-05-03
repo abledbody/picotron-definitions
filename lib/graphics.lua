@@ -163,14 +163,14 @@ function rectfill(x0, y0, x1, y1, col) end
 
 --- Remaps one color index to produce another.
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#pal)
---- @param c0 integer The index to change.
+--- @param c0 integer The index to remap.
 --- @param c1 integer The index to map c0 to.
 --- @param p? 0 | 1 0 to swap during drawing, 1 to swap the entire screen. Defaults to 0.
 function pal(c0, c1, p) end
 
 --- Sets the ARGB color value for the given color index.
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_gfx_pipeline.html#Display_Palettes)
---- @param c0 integer The index to change.
+--- @param c0 integer The index to change the color of.
 --- @param argb integer The ARGB color value to set as a 32-bit integer, with the alpha channel in the highest byte.
 --- @param p 2
 function pal(c0, argb, p) end
