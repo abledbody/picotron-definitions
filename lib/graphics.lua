@@ -15,10 +15,12 @@ function cls(col) end
 
 --- Prints text on screen
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#print)
---- @param value any
---- @param x? integer
---- @param y? integer
---- @param col? integer
+--- @param value any The object to print.
+--- @param x? integer The x coordinate to print at.
+--- @param y? integer The y coordinate to print at.
+--- @param col? integer The color index to print in.
+--- @return integer new_x The x coordinate of the next character to be printed.
+--- @return integer new_y The y coordinate of the next character to be printed.
 function print(value, x, y, col) end
 
 --- Sets the clipping rectangle for drawing operations.
