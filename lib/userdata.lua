@@ -359,6 +359,20 @@ function userdata:mul(src, dest, src_offset, dest_offset, len, src_stride, dest_
 --- @return userdata
 function userdata:div(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
 
+--- Applies integer division to each element and written to a new userdata
+--- If dest is userdata, result will be written to dest. If dest is true, result will be written to self
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_op)
+--- @param src? userdata | number
+--- @param dest? userdata | boolean
+--- @param src_offset? integer
+--- @param dest_offset? integer
+--- @param len? integer
+--- @param src_stride? integer
+--- @param dest_stride? integer
+--- @param spans? integer
+--- @return userdata
+function userdata:idiv(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
+
 --- Applies mod to each element and written to a new userdata
 --- If dest is userdata, result will be written to dest. If dest is true, result will be written to self
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_op)
