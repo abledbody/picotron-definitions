@@ -148,20 +148,22 @@ function set(u, x, y, ...) end
 --- @param height? integer
 function blit(src, dest, src_x, src_y, dest_x, dest_y, width, height) end
 
---- @class userdata
---- @return userdata | nil
 --- Get a row of a 2d userdata
 --- Rows are 0-indexed
 --- Returns nil if out of range
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_row)
+--- @class userdata
+--- @param i integer
+--- @return userdata | nil
 function userdata:row(i) end
 
---- @class userdata
---- @return userdata | nil
 --- Get a column of a 2d userdata
 --- Columns are 0-indexed
 --- Returns nil if out of range
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_row)
+--- @class userdata
+--- @param i integer
+--- @return userdata | nil
 function userdata:column(i) end
 
 -- TODO userdata op functions
@@ -429,12 +431,53 @@ function userdata:bor(src, dest, src_offset, dest_offset, len, src_stride, dest_
 --- @return userdata
 function userdata:bxor(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
 
+--- Shifts the bits of each element to the left by n bits
+--- If dest is userdata, result will be written to dest. If dest is true, result will be written to self
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_op)
+--- @param src? userdata | number
+--- @param dest? userdata | boolean
+--- @param src_offset? integer
+--- @param dest_offset? integer
+--- @param len? integer
+--- @param src_stride? integer
+--- @param dest_stride? integer
+--- @param spans? integer
+--- @return userdata
+function userdata:shl(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
+
+--- Shifts the bits of each element to the right by n bits
+--- If dest is userdata, result will be written to dest. If dest is true, result will be written to self
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_op)
+--- @param src? userdata | number
+--- @param dest? userdata | boolean
+--- @param src_offset? integer
+--- @param dest_offset? integer
+--- @param len? integer
+--- @param src_stride? integer
+--- @param dest_stride? integer
+--- @param spans? integer
+--- @return userdata
+function userdata:shr(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
+
 --- Copy the userdata
 --- When :copy is given a table as the first argument (after self), it is taken to be a
 --- lookup table into that userdata for the start of each span.
 --- ** this form will be deprecated in 0.1.2 -- use :take instead with the same parameters.
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_copy)
---- @param idx? userdata | number
+--- @param src? userdata | number
+--- @param dest? userdata | boolean
+--- @param src_offset? integer
+--- @param dest_offset? integer
+--- @param len? integer
+--- @param src_stride? integer
+--- @param dest_stride? integer
+--- @param spans? integer
+--- @return userdata
+function userdata:copy(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
+
+--- Take values from the userdata at locations specified by idx.
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_take)
+--- @param idx userdata
 --- @param dest? userdata | boolean
 --- @param src_offset? integer
 --- @param dest_offset? integer
@@ -443,11 +486,7 @@ function userdata:bxor(src, dest, src_offset, dest_offset, len, src_stride, dest
 --- @param dest_stride? integer
 --- @param spans? integer
 --- @return userdata
-function userdata:copy(idx, dest, src_offset, dest_offset, len, idx_stride, dest_stride, spans) end
-
---- Take values from the userdata at locations specified by idx.
---- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#userdata_take)
-function userdata:take(src, dest, src_offset, dest_offset, len, src_stride, dest_stride, spans) end
+function userdata:take(idx, dest, src_offset, dest_offset, len, idx_stride, dest_stride, spans) end
 
 --- Returns the largest of each element or scalar
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#UserData_Operations)
