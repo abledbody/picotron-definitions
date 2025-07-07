@@ -33,6 +33,10 @@ function clip(x, y, w, h, clip_previous) end
 
 --- Reset clipping region
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#clip)
+--- @return integer x
+--- @return integer y
+--- @return integer w
+--- @return integer h
 function clip() end
 
 --- Sets the pixel to at x, y to the color index 0 to 63
@@ -89,10 +93,14 @@ function color(col) end
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#camera)
 --- @param x integer
 --- @param y integer
+--- @return integer x
+--- @return integer y
 function camera(x, y) end
 
 --- Reset the camera offset
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#camera)
+--- @return integer x
+--- @return integer y
 function camera() end
 
 --- Draw a circle at x, y with radius r
