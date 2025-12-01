@@ -31,6 +31,10 @@ function print(value, x, y, col) end
 --- @param w integer
 --- @param h integer
 --- @param clip_previous? boolean
+--- @return integer x
+--- @return integer y
+--- @return integer w
+--- @return integer h
 function clip(x, y, w, h, clip_previous) end
 
 --- Reset clipping region
