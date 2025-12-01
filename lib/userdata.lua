@@ -51,7 +51,7 @@ function userdata:dot(v) end
 
 --- @class userdata
 --- @param v userdata
---- @param v_out userdata | boolean
+--- @param v_out userdata | boolean | nil
 --- @return userdata
 --- Get the cross product of another vector
 --- If v_out is provided, the output will be stored in v_out, or in self if true
