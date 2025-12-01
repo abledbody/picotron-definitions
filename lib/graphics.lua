@@ -79,6 +79,7 @@ function fget(n, f) end
 --- @param n integer
 --- @param f integer
 --- @param val boolean
+--- @overload fun(n: integer, val: integer)
 function fset(n, f, val) end
 
 --- Set the cursor position
