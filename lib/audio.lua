@@ -10,14 +10,13 @@
 --- @param mix_volume? integer The volume of the sound effect (0-255). Takes priority over the value at `0x553a`.
 function sfx(n, channel, offset, length, pan, mix_volume) end
 
---- Plays music starting from pattern n.
---- If n is -1, stop music
---- fade_len is in ms (default 0)
---- channel_mask is bitfield that specifies which channels to reserve for music only, low bits first
---- @param n integer
---- @param fade_len? integer
---- @param channel_mask? integer
-function music(n, fade_len, channel_mask) end
+--- Plays music starting from a specific pattern.
+--- @param n integer The pattern to start from. -1 stops playback.
+--- @param fade_len? integer How long it takes to fade between two songs in milliseconds. Defaults to 0.
+--- @param channel_mask? integer A bitfield which specifies which channels from the song will play. Defaults to 255.
+--- @param base_address? integer The address of the sfx to play from.
+--- @param tick_offset? integer The starting offset from the given pattern that music will begin playing at in ticks.
+function music(n, fade_len, channel_mask, base_address, tick_offset) end
 
 --- This provides low level control over a channel. It is useful in more niche situations, like audio authoring tools and size-coding.
 --- Internally this is what is used to play each row of a sfx when one is active. Use 0xff to indicate an attribute should not be altered.
