@@ -161,6 +161,26 @@ function rect(x0, y0, x1, y1, col) end
 --- @param col? integer
 function rectfill(x0, y0, x1, y1, col) end
 
+--- Draw a rounded rectangle with rounded corners
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#rrect)
+--- @param x integer
+--- @param y integer
+--- @param width integer
+--- @param height integer
+--- @param radius integer
+--- @param col? integer
+function rrect(x, y, width, height, radius, col) end
+
+--- Draw a filled rectangle with rounded corners
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#rrectfill)
+--- @param x integer
+--- @param y integer
+--- @param width integer
+--- @param height integer
+--- @param radius integer
+--- @param col? integer
+function rrectfill(x, y, width, height, radius, col) end
+
 --- Swap color c0 and c1
 --- If p is 0, the draw palette will be re-mapped (default)
 --- If p is 1, the whole screen will be re-mapped
