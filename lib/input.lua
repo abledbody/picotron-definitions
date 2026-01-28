@@ -89,3 +89,11 @@ function mouse(new_mx, new_my) end
 --- @return number dx
 --- @return number dy
 function mouselock(lock, event_sensitivity, move_sensitivity) end
+
+--- Allows terminal programs to be interactive
+--- Execution of the program is blocked until the user enters a response,
+--- and that response is returned
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#input)
+--- @param prompt string
+--- @param flags? 0x1 | 0x2 | 0x4
+function input(prompt, flags) end
